@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA's Webb and Extreme Starburst Galaxies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>NASA's Webb and Extreme Starburst Galaxies</h1>
+        <img src="https://stsci-opo.org/STScI-01HRD50BHS9Z5353MJ62PYASBW.png" alt="Extreme Starburst Galaxy">
+        <p>Nasa's James Webb Space Telescope has provided unprecedented insights into extreme starburst galaxies.</p>
+        <p>These galaxies are characterized by exceptionally high rates of star formation.</p>
+        <p>Webb's advanced capabilities allow scientists to study the conditions that lead to such rapid star formation.</p>
+        <p>Understanding these galaxies helps researchers learn about the evolution of the universe.</p>
+        <p>The observations from Webb are key to unveiling the mysteries of galactic growth and stellar evolution.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>What characterizes extreme starburst galaxies?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) Low rates of star formation</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) High rates of star formation</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) No star formation</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) Star formation in clusters only</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'B') {
+                resultDiv.textContent = "Correct! Extreme starburst galaxies are characterized by high rates of star formation.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is B) High rates of star formation.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
